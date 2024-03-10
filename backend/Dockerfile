@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY quicklisp.lisp .
 
-RUN sbcl --load quicklisp.lisp --eval '(quicklisp-quickstart:install)' --eval '(ql:quickload "hunchentoot")'
+RUN sbcl --load quicklisp.lisp --eval '(quicklisp-quickstart:install)'
 
 COPY . .
 
