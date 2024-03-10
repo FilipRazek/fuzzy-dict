@@ -4,7 +4,7 @@
 (load "../lev/package.lisp")
 (load "../lev/compute.lisp")
 
-(hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port 4242))
+(hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port 4242 :document-root "/dev/null"))
 
 (hunchentoot:define-easy-handler (handle-levenshtein :uri "/levenshtein") (a b)
     (setf (hunchentoot:content-type*) "text/plain")
