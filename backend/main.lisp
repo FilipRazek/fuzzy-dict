@@ -1,8 +1,8 @@
 (push :hunchentoot-no-ssl *features*)
 (quicklisp:quickload :hunchentoot)
 
-(load "../lev/package.lisp")
-(load "../lev/compute.lisp")
+(load "lev/package.lisp")
+(load "lev/compute.lisp")
 
 (hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port 4242 :document-root "/dev/null"))
 
