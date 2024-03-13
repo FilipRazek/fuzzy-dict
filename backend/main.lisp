@@ -6,6 +6,7 @@
 
 (hunchentoot:define-easy-handler (handle-levenshtein :uri "/levenshtein") (a b)
     (setf (hunchentoot:content-type*) "text/plain")
+    (setf (hunchentoot:header-out :Access-Control-Allow-Origin hunchentoot:*reply*) "https://levenshtein-comparator-frontend.onrender.com")
     (format nil "~A" (compute:levenshtein a b)))
 
 (hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port 4242 :document-root "/dev/null"))

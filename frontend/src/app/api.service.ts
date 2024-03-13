@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core";
   providedIn: 'root',
 })
 export class ApiService {
-  BACKEND_URL = "https://fuzzy-dict-backend.onrender.com";
+  BACKEND_URL = "https://levenshtein-comparator-backend.onrender.com";
 
   constructor(private http: HttpClient) { }
 
