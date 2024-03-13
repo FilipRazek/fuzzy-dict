@@ -11,10 +11,11 @@ import { ApiService } from './api.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
+  computedDistance = 0;
+
   constructor(private apiService: ApiService) { }
 
   async ngOnInit() {
-    const data = await this.apiService.fetchLevenshtein("kitten", "sitting");
-    console.log(data);
+    this.computedDistance = await this.apiService.fetchLevenshtein("kitten", "sitting");
   }
 }
