@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   async ngOnInit() {
-    const data = await this.apiService.fetchLevenshtein();
+    const data = await this.apiService.fetchLevenshtein("kitten", "sitting");
     console.log(data);
   }
 }

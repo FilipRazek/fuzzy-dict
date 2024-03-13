@@ -9,12 +9,12 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  fetchLevenshtein() {
+  fetchLevenshtein(a: string, b: string) {
     type LevenshteinResponse = {
       value: number;
     }
     return new Promise<LevenshteinResponse>((resolve, reject) => {
-      this.http.get<LevenshteinResponse>(`${this.BACKEND_URL}/levenshtein?a=hell&b=hello`)
+      this.http.get<LevenshteinResponse>(`${this.BACKEND_URL}/levenshtein?a=${a}&b=${b}`)
         .subscribe({ next: resolve, error: reject });
     });
   }
