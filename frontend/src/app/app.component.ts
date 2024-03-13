@@ -19,7 +19,7 @@ export class AppComponent {
   constructor(private apiService: ApiService) { }
 
   recomputeDistance() {
-    this.apiService.fetchLevenshtein(this.firstWord, this.secondWord).then((distance) => {
+    this.apiService.fetchLevenshtein(this.firstWord, this.secondWord).then(({ distance }) => {
       this.computedDistance = distance;
     });
   }

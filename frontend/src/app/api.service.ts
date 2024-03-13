@@ -10,7 +10,9 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   fetchLevenshtein(a: string, b: string) {
-    type LevenshteinResponse = number;
+    type LevenshteinResponse = {
+      distance: number;
+    };
 
     return new Promise<LevenshteinResponse>((resolve, reject) => {
       this.http.get<LevenshteinResponse>(`${this.BACKEND_URL}/levenshtein?a=${a}&b=${b}`)
