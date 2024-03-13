@@ -3,8 +3,12 @@
     <div class="left-side">
       <form class="example-form">
         <mat-form-field class="example-full-width">
-          <mat-label>Favorite food</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
+          <mat-label>First word</mat-label>
+          <input matInput placeholder="Ex. kitten" [(ngModel)]="firstWord" name="firstWord" (ngModelChange)="recomputeDistance()" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Second word</mat-label>
+          <input matInput placeholder="Ex. sitting" [(ngModel)]="secondWord" name="secondWord" (ngModelChange)="recomputeDistance()" />
         </mat-form-field>
       </form>
     </div>
