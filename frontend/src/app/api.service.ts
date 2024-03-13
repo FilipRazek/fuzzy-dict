@@ -5,13 +5,18 @@ import { Injectable } from "@angular/core";
   providedIn: 'root',
 })
 export class ApiService {
+  BACKEND_URL = "https://fuzzy-dict-backend.onrender.com";
+
   constructor(private http: HttpClient) { }
 
   fetchLevenshtein() {
-    type Response = {
+    type LevenshteinResponse = {
       value: number;
     }
-    return this.http.get<Response>("https://fuzzy-dict-backend.onrender.com/levenshtein?a=hell&b=hello")
+    return new Promise<LevenshteinResponse>((resolve, reject) => {
+      this.http.get<LevenshteinResponse>(`${this.BACKEND_URL}/levenshtein?a=hell&b=hello`)
+        .subscribe({ next: resolve, error: reject });
+    });
   }
 }
 

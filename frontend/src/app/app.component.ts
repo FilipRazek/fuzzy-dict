@@ -13,8 +13,8 @@ import { ApiService } from './api.service';
 export class AppComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
-  ngOnInit() {
-    this.apiService.fetchLevenshtein()
-      .subscribe(data => console.log(data));
+  async ngOnInit() {
+    const data = await this.apiService.fetchLevenshtein();
+    console.log(data);
   }
 }
