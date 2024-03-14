@@ -14,7 +14,13 @@
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
-      <p>{{ computedDistance }}</p>
+      <div class="result">
+        @if (loading) {
+          <mat-spinner></mat-spinner>
+        } @else {
+          <p>{{ computedDistance }}</p>
+        }
+      </div>
     </div>
   </div>
 </main>
